@@ -46,3 +46,39 @@ body {
 	height: 389px;
 	width: 406px;
 }
+
+#Question {
+	text-align: center;
+	margin-top: 3px;
+
+}
+
+ul {
+	margin-top: -14px;
+}
+
+li {
+	list-style-type: none;
+	text-align: left;
+}
+
+#text_display {
+	text-align: left;
+	font-style: bold;
+	margin-left: 37px;
+	font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
