@@ -50,6 +50,7 @@ body {
 #Question {
 	text-align: center;
 	margin-top: 3px;
+	margin-bottom: -11px;
 
 }
 
@@ -67,6 +68,14 @@ li {
 	font-style: bold;
 	margin-left: 37px;
 	font-size: 20px;
+}
+
+#elevdisplay {
+	text-align: left;
+	margin-bottom: 5px;
+	border: 1px solid black;
+	height: 35px;
+	width: 75px;
 }
 
 

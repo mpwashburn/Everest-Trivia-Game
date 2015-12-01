@@ -8,16 +8,19 @@ $(document).ready(function(){
 
 // $("#elevdisplay").click(function elevRoll(min, max){
 
-//   var playerElev = Math.round((Math.random() * (1500-500)) + 500);
-//     document.getElementById("elevdisplay").innerHTML = playerElev; //change to jquery
-// });
-
 $("#elevRollBtn").click(function(){
-	$("Text_Display").append("When is the best time to climb Mt. Everest?");
-	$("ul").append("<li>'(a) Spring'</li>", "<li>'(b) Summer'</li>", "<li>'(c) Autumn'</li>");
+	$("ul").append("<li>(a) Spring</li>", "<li>(b) Summer</li>", "<li>(c) Autumn</li>");
+	$("#text_display").append("<b>When is the best time to climb Mt. Everest?</b>");
+	$(function elevRoll(min,max){
+		var playerElev = Math.round((Math.random() * (1500-500)) + 500);
+		document.getElementById("elevdisplay").innerHTML = playerElev; //create new <div> for display with new id
+	});
 });
 
-
+// $("#elevdisplay").click(function elevRoll(min, max){
+// var playerElev = Math.round((Math.random() * (1500-500)) + 500);
+// $("elevdisplay").html(playerElev);
+// });
 
 
 
