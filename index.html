@@ -7,8 +7,24 @@
   <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
-  <h2>Elevation</h2>
+  <div id="header">Everest</div>
+
+  <!--main_container sits center-left and will house the mountain picture and display the player's icons moving toward summit-->
+  <div id="main_container"></div>
+
+  <!--display_box sits top-right corner. This box will be responsible for most player communication of instruction and questions-->
+  <div id="display_box">
+  	<p id="Text_Display"> Instructions prior to start, and questions displayed here</p>
+  </div>
+
+  
+  <!--the control_box will house the 'next card', 'reset' and 'start' buttons. In addition, it will display each players current elevation on the mountain -->
+  <div id="control_box">
+  	<h2>Elevation</h2>
     <div id="elevdisplay">Attainable Elevation</div>
+  </div>
+
+  
 
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

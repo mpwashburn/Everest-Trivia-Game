@@ -1,0 +1,48 @@
+body {
+	background-color: black;
+}
+
+#header {
+    background-color: #bddfeb;
+    border:10px solid white;
+    color:white;
+    text-align:center;
+    padding:5px;
+    height: 55px;
+}
+
+#main_container {
+
+	float: left;
+	background-color: #bddfeb;
+	border-top: 0px;
+	border-right: 10px solid white;
+	border-bottom: 10px solid white;
+	border-left: 10px solid white;
+	color: black;
+	height: 570px;
+	width: 825px;
+
+}
+
+#display_box {
+	float: right;
+	background-color: #bddfeb;
+	border-top: 0px;
+	border-right: 10px solid white;
+	border-bottom: 10px solid white;
+	border-left: 0px;
+	height: 171px;
+	width: 406px;
+}
+
+#control_box {
+	float: right;
+	background-color: #bddfeb;
+	border-top: 0px;
+	border-right: 10px solid white;
+	border-bottom: 10px solid white;
+	border-left: 0px;
+	height: 389px;
+	width: 406px;
+}
