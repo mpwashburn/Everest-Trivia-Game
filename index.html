@@ -12,26 +12,27 @@
   <!--main_container sits center-left and will house the mountain picture and display the player's icons moving toward summit-->
   <div id="main_container"></div>
 
-  <!--display_box sits top-right corner. This box will be responsible for most player communication of instruction and questions-->
   <div id="display_box">
-  	<h1 id="Question">Your question is...</h1>
-  		<p id="text_display"></p>
-  		<p>
-  				<ul>
-	  				<li></li>
-	  				<li></li>
-	  				<li></li>
-				</ul>
-		</p>
-
   </div>
 
   
   <!--the control_box will house the 'next card', 'reset' and 'start' buttons. In addition, it will display each players current elevation on the mountain -->
-  <div id="control_box">
-  	<h2>Elevation</h2>
-    <div id="elevdisplay">display</div>
-    <button  id="elevRollBtn">Click for Next Turn</button>
+  <div class="control_box">
+    <div>
+     <button id="questionBtn">Next Question</button>
+     <button id="resetBtn">Reset</button>
+     </div>
+     
+     <div id="scoreDisplay">
+     <div>Player 1</div>
+     <div id="Player1Score">score</div>
+     <div>Player 2</div>
+     <div id="Player2Score">score</div>
+     </div>
+    <!-- <h2>Elevation</h2> -->
+
+    <!-- <div id="elevdisplay">display</div>
+    <button  id="elevRollBtn">Click for Next Turn</button> -->
 
   </div>
 

@@ -1,70 +1,58 @@
 console.log("main js loaded.");
 $(document).ready(function(){ 
 
-$("#elevRollBtn").click(function(){
-	$("ul").append("<li>(a) Spring</li>", "<li>(b) Summer</li>", "<li>(c) Autumn</li>");
-	$("#text_display").append("<b>When is the best time to climb Mt. Everest?</b>");
-});
-
+// this code was taken from the internet
 function shuffle (array) {
   var i = 0
     , j = 0
     , temp = null
 
   for (i = array.length - 1; i > 0; i -= 1) {
-    j = Math.floor(Math.random() * (i + 1))
-    temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
+    j = Math.floor(Math.random() * (i + 1));
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
   }
 }
 
 var Card = function Card(question, correct, wrong1, wrong2){
-	this.question = question;
-	this.correctAnswer = correct;
-	this.possibleAnswers = [correct, wrong1, wrong2];
 
-	shuffle(this.possibleAnswers);
+	var self = this; // you can create a new variable of 'this' when calling on 'this' may be conflicting with another 'this' in a line of code.
+
+	self.question = question;
+	self.correctAnswer = correct;
+	self.possibleAnswers = [correct, wrong1, wrong2];
+
+	shuffle(self.possibleAnswers);
 	//set new shuffled order to positions
-	this.a = this.possibleAnswers[0];
-	this.b = this.possibleAnswers[1];
-	this.c = this.possibleAnswers[2];
+	self.a = self.possibleAnswers[0];
+	self.b = self.possibleAnswers[1];
+	self.c = self.possibleAnswers[2];
 
 
-	this.checkIfRight = function(){
-		// write code here that compares this.correctAnswer with the answer a person chooses to see if the strings match
+	self.checkIfRight = function(chosenAnswer){
+		// write code here that compares self.correctAnswer with the answer a person chooses to see if the strings match
 		// return true if they match
-		if (correctAnswer === this.possibleAnswers[0]) {
-			return true;
-	 } else if (correctAnswer === this.possibleAnswers[1] || correctAnswer === possibleAnswers[2]) 
-	 		return false;
+		console.log(chosenAnswer);
+		if (self.correctAnswer === chosenAnswer) {
+			console.log('Correct!')
+			return true
+		}
+	}
+
+	self.printOut = function(){
+		$('#display_box').html('<div id="text_display1">' + self.question + '</div><div><ul id="choices_display"><li id="answerA" class="answer">' + self.a + '</li><li id="answerB" class="answer">' + self.b + '</li><li id="answerC" class="answer">' + self.c + '</li></ul></div>');
 	}
 }
-
-var questionCollection = [
-	new Card("Question", "correctAnswer", "wrong1", "Wrong answer 2"),
-	new Card("What is the best season to climb Mt. Everest?", "Spring", "Summer", "Autumn")
-]
-
 
 var Player = function Player(){
 	this.score = 0;
 	this.icon = "default icon name";
 }
 
-var Deck = function Deck(){
-	this.badCards = function(){
-		// takes a random 5 cards from all the bad card collection and return an array
-	}
-	this.questionCards = function(){
-		// takes a random 55 cards from all the question card collection and return an array
-	}
-	this.fullDeck = function(){
-		// takes the return value of the two functions above and shuffles them together into one nice 60 card deck returned as an array
-	}
-}
-
 var Game = function Game(){
+	$('#display_box').html('<div id="text_display1">Are you Ready?</div>');
+
 	this.player1 = new Player();
 	this.player2 = new Player();
 
@@ -72,21 +60,32 @@ var Game = function Game(){
         return "Player 1 is at " + this.player1.score + " elevation. And Player 2 is at " + this.player2.score + " elevation."
     }
 
-	this.deck = new Deck();
+	this.deck = [
+		new Card("Question1", "correctAnswer", "wrong1", "Wrong answer 2"),
+		new Card("What is the best season to climb Mt. Everest?", "Spring", "Summer", "Autumn")
+	]
 
 	this.draw = function(){
-		// write code that pulls the top card from the deck and shows the question on it
-		return this.deck.pop()
+		var card = this.deck.pop()
+		card.printOut();
+
+		$('.answer').click(function(){
+			if (card.checkIfRight($(this)[0].innerHTML)){
+				// move the character up in elevetation and start next turn
+				// add to player score
+			} else {
+				// don't move character, and start next turn
+			}
+		})		
 	}
 
-	this.elevRoll = function(min,max){
-		var playerElev = Math.round((Math.random() * (1500-500)) + 500);
-		document.getElementById("elevdisplay").innerHTML = playerElev; //create new <div> for display with new id
-		document.getElementById("elevRollBtn").disabled = true;
-	}
 }
 
+game = new Game();
 
+$('#questionBtn').click(function(){
+	game.draw();
+})
 
 
 });
