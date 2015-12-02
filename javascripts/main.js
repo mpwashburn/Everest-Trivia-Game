@@ -34,12 +34,16 @@ var Card = function Card(question, correct, wrong1, wrong2){
 	this.checkIfRight = function(){
 		// write code here that compares this.correctAnswer with the answer a person chooses to see if the strings match
 		// return true if they match
+		if (correctAnswer === this.possibleAnswers[0]) {
+			return true;
+	 } else if (correctAnswer === this.possibleAnswers[1] || correctAnswer === possibleAnswers[2]) 
+	 		return false;
 	}
 }
 
 var questionCollection = [
-	new Card("Question", "Correct Answer", "Wrong answer 1", "Wrong answer 2"),
-	new Card("Why did the chicken cross the road?", "To get to the other side", "Wrong answer 1", "Wrong answer 2")
+	new Card("Question", "correctAnswer", "wrong1", "Wrong answer 2"),
+	new Card("What is the best season to climb Mt. Everest?", "Spring", "Summer", "Autumn")
 ]
 
 
