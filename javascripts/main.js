@@ -7,6 +7,9 @@ var player2Score = 0;
 var score1 = document.getElementById("p1Score");
 score1.value = player1Score;
 
+var score2 = document.getElementById("p2Score");
+score2.value = player2Score;
+
 
 
 // this code was taken from the internet

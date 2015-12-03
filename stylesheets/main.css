@@ -132,6 +132,11 @@ li {
 
 #scoreboxes {
 	background-color: #bddfeb;
+	width: 419px;
+	height: 290px;
+	margin-top: 0px;
+	border-bottom: 10px solid white;
+
 }
 
 input {
