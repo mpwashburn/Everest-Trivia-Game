@@ -1,6 +1,8 @@
 console.log("main js loaded.");
 $(document).ready(function(){ 
 
+var playerCounter = 0;
+
 var player1Score = 0;
 var player2Score = 0;
 
@@ -10,15 +12,13 @@ score1.value = player1Score;
 var score2 = document.getElementById("p2Score");
 score2.value = player2Score;
 
-var playerTurn = 0;
+// adding a playerTurn function
 
-function(playerTurn){
-	if playerTurn = even;
-	console.log("player 1 turn");
-	else console.log("player 2 turn")
+function playerTurn(){
+	if (playerCounter%2 === 0) {
+		return "player1";
+	} else return "player2";
 }
-
-
 
 // this code was taken from the internet
 function shuffle (array) {
@@ -52,11 +52,21 @@ var Card = function Card(question, correct, wrong1, wrong2){
 		// write code here that compares self.correctAnswer with the answer a person chooses to see if the strings match
 		// return true if they match
 		console.log(chosenAnswer);
-		if (self.correctAnswer === chosenAnswer) {
-			player1Score += 500;
-			p1Score.value = player1Score;
-		} else alert ("wrong");
-			counter++;
+		if (playerTurn() == 'player1') {
+			if (self.correctAnswer === chosenAnswer) {
+				player1Score += 500;
+				p1Score.value = player1Score;
+			} else alert ("wrong");
+			playerCounter++;
+		}
+			else { if (self.correctAnswer === chosenAnswer) {
+				player2Score += 500;
+				p2Score.value = player2Score;
+			} else alert ("wrong");
+			playerCounter++;
+		
+		}
+		
 		
 	}
 
@@ -94,7 +104,7 @@ var Game = function Game(){
 
 		$('.answer').click(function(){
 			if (card.checkIfRight($(this)[0].innerHTML)){
-				//chosenAnswer === true
+				// chosenAnswer === true
 
 
 
