@@ -10,6 +10,14 @@ score1.value = player1Score;
 var score2 = document.getElementById("p2Score");
 score2.value = player2Score;
 
+var playerTurn = 0;
+
+function(playerTurn){
+	if playerTurn = even;
+	console.log("player 1 turn");
+	else console.log("player 2 turn")
+}
+
 
 
 // this code was taken from the internet
