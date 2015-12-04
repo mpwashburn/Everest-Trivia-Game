@@ -1,5 +1,7 @@
 body {
 	background-image: url(http://snowbrains.com/wp-content/uploads/2013/10/mount-everest-1.jpg);
+	margin: 0px;
+	background-size: 1280px x 700px;
 }
 
 #header {
@@ -9,14 +11,14 @@ body {
     padding:36px;
     padding-bottom: 20px;
     height: 34px;
-    font-size: 46px;
+    font-size: 102px;
 }
 
 #main_container {
 
 	float: left;
 	color: black;
-	height: 570px;
+	height: 560px;
 	width: 825px;
 
 }
@@ -34,13 +36,15 @@ body {
 }
 
 
-#button_box {
+#scoreboxes {
 	float: right;
 	height: 89px;
 	width: 409px;
 	background-color: black;
 	opacity: 0.7;
 	border-right: 10px solid white;
+	color: white;
+	font-size: 25px;
 }
 
 li {
@@ -92,7 +96,7 @@ li {
 	border-radius: 50px;
 	color: white;
 	font-size: 15px;
-	margin: 15px 45px 0px 97px;
+	margin: 144px 45px 0px 151px;
 	
 }
 
@@ -116,7 +120,7 @@ li {
 	
 }
 
-#scoreboxes {
+#button_box {
 	width: 409px;
 	height: 290px;
 	border-bottom: 10px solid white;
@@ -125,12 +129,23 @@ li {
 	background-color: black;
 	opacity: 0.7;
 	border-radius: 0 0 23px 23px;
+	color: white;
 }
 
-input {
-	
+input#p1Score.sb {
+	width: 90px;
+	height: 40;
+	text-align: center;
+	font-size: 18px;
+	margin: 28px 0px 0 0px;
 }
-
+input#p2Score.sb {
+	width: 90px;
+	height: 40;
+	text-align: center;
+	font-size: 18px;
+	margin: 10px 20px 0 0px;
+}
 
 
 
