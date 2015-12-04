@@ -28,8 +28,7 @@ body {
 	height: 171px;
 	width: 409px;
 	color: white;
-	background-color: black;
-	opacity: 0.7;
+	background-color: rgba(0,0,0,0.7);
 	border-radius: 23px 23px 0 0;
 	border-right: 10px solid;
 	margin-top: 6px;
@@ -40,8 +39,7 @@ body {
 	float: right;
 	height: 89px;
 	width: 409px;
-	background-color: black;
-	opacity: 0.7;
+	background-color: rgba(0,0,0,0.7);
 	border-right: 10px solid white;
 	color: white;
 	font-size: 25px;
@@ -73,8 +71,7 @@ li {
 
 
 #questionBtn {
-	background-color: grey;
-	opacity: 0.7;
+	background-color: rgb(211,211,211,0.7);
 	width: 145px;
 	height: 116px;
 	border-radius: 73px;
@@ -126,8 +123,7 @@ li {
 	border-bottom: 10px solid white;
 	border-right: 10px solid white;
 	float: right;
-	background-color: black;
-	opacity: 0.7;
+	background-color: rgba(0,0,0,0.7);
 	border-radius: 0 0 23px 23px;
 	color: white;
 }

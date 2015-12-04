@@ -3,7 +3,7 @@ $(document).ready(function(){
 // this playerCounter is used to switch between player turns after each draw & then chosen answer.
 var playerCounter = 0;
 
-// These varialbe set up the players scores to start at zero
+// These variables set up the players scores to start at zero
 var player1Score = 0;
 var player2Score = 0;
 
@@ -14,7 +14,7 @@ score1.value = player1Score;
 var score2 = document.getElementById("p2Score");
 score2.value = player2Score;
 
-// The playerTurn function creates an object to determine which player it is. I use an "if" statement with a modulus to do so. We pull form the playerCounter about and divid it by two. if there is no remainder it's true and it's player1's turn. Otherwise, it's false and it's player2's turn.
+// The playerTurn function creates an object to determine which player it is. I use an "if" statement with a modulus to do so. We pull form the playerCounter above and divide it by two. If there is no remainder it's true and it's player1's turn. Otherwise, it's false and it's player2's turn.
 
 function playerTurn(){
 	if (playerCounter%2 === 0) {
@@ -46,6 +46,8 @@ function shuffle (array) {
   }
 }
 
+// This Card object sets up the template of what the trivia card consists of, as well as the specific order of the questions and where the correct answer lies
+
 var Card = function Card(question, correct, wrong1, wrong2){
 
 	var self = this; // you can create a new variable of 'this' when calling on 'this' may be conflicting with another 'this' in a line of code.
@@ -61,8 +63,6 @@ var Card = function Card(question, correct, wrong1, wrong2){
 	self.c = self.possibleAnswers[2];
 
 	self.checkIfRight = function(chosenAnswer){
-		// write code here that compares self.correctAnswer with the answer a person chooses to see if the strings match
-		// return true if they match
 		console.log(chosenAnswer);
 		if (playerTurn() == 'player1') {
 			if (self.correctAnswer === chosenAnswer) {
@@ -72,7 +72,7 @@ var Card = function Card(question, correct, wrong1, wrong2){
 			} else {
 				$('#questiondisplay').html('Incorrect');
 			}
-			
+			// we have the this check for 
 			if (player1Score == 29029){
 			winner();
 		}
@@ -114,10 +114,6 @@ var Game = function Game(){
 	this.player1 = new Player();
 	this.player2 = new Player();
 
-	this.scoreBoard = function(){
-        return "Player 1 is at " + this.player1.score + " elevation. And Player 2 is at " + this.player2.score + " elevation."
-    }
-
 	this.deck = [
 		new Card("What is the ideal time to climb Mt. Everest?", "April - May", "June - September", "October - December"),
 		new Card("At least how many deaths to date has Everest claimed?", "250", "400", "323"),
@@ -135,8 +131,8 @@ var Game = function Game(){
 		new Card("Which amoung these is a form of altitude sickness?", "HACE", "HARE", "HIPA"),
 		new Card("In which year was the body of famous climber George Mallory, who died in 1924, found?", "1999", "1989", "2009"),
 		new Card("What type of mountains are the Himalayas?", "fold mountain", "table mountain", "snake mountain"),
-		new Card("Age-wise, what type of mountains are the Himalayas?", "young mountain chain", "old mountain chain", "ancient mountain chain"),
-		new Card("The Himalayas are still growing. How much are they growing each year", "8 - 12 centimeters", "2 - 6 centimeters", "15 - 18 centimeters"),
+		new Card("Age-wise, what type of mountains are the Himalayas?", "Young mountain chain", "Old mountain chain", "Ancient mountain chain"),
+		new Card("The Himalayas are still growing. How much are they growing each year", "2 - 6 centimeters", "8 - 12 centimeters", "15 - 18 centimeters"),
 		new Card("Who was the first American to reach the top of Mt. Everest", "James Whittaker", "Forest Whittaker", "Edwin Whittaker"),
 		new Card("Who was the first blind person to reach the top of Mt. Everest?", "Erik Weihenmayer", "James Thurber", "Jorge Luis Borges"),
 		new Card("What is teh average cost of a fully guided journey up Mt. Everest from the south face?", "$65,000", "85,000", "$105,000"),
@@ -149,17 +145,7 @@ var Game = function Game(){
 		card.printOut();
 
 		$('.answer').click(function(){
-			if (card.checkIfRight($(this)[0].innerHTML)){
-				// chosenAnswer === true
-
-
-
-
-				// move the character up in elevetation and start next turn
-				// add to player score
-			} else {
-				// don't move character, and start next turn
-			}
+			(card.checkIfRight($(this)[0].innerHTML));
 		})		
 	}
 
