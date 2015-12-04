@@ -3,22 +3,18 @@ body {
 }
 
 #header {
-    background-color:;
-    border:10px solid white;
+    border-bottom: 5px solid black;
     color:white;
     text-align:center;
-    padding:5px;
-    height: 55px;
+    padding:36px;
+    padding-bottom: 20px;
+    height: 34px;
+    font-size: 46px;
 }
 
 #main_container {
 
 	float: left;
-	background-color: ;
-	border-top: 0px;
-	border-right: 10px solid white;
-	border-bottom: 10px solid white;
-	border-left: 10px solid white;
 	color: black;
 	height: 570px;
 	width: 825px;
@@ -27,41 +23,36 @@ body {
 
 #display_box {
 	float: right;
-	background-color: ;
-	border-top: 0px;
-	border-right: 10px solid white;
-	border-bottom: 10px solid white;
-	border-left: 0px;
 	height: 171px;
 	width: 409px;
+	color: white;
+	background-color: black;
+	opacity: 0.7;
+	border-radius: 23px 23px 0 0;
+	border-right: 10px solid;
+	margin-top: 6px;
 }
 
 
 #button_box {
 	float: right;
-	background-color:;
-	border-top: 0px;
-	border-right: 10px solid white;
-	border-bottom: 10px solid white;
-	border-left: 0px;
 	height: 89px;
 	width: 409px;
-}
-
-ul {
-	margin-top: -14px;
+	background-color: black;
+	opacity: 0.7;
+	border-right: 10px solid white;
 }
 
 li {
 	list-style-type: none;
-	text-align: left;
+	text-align: center;
 }
 
 #text_display1 {
 	text-align: center;
 	font-style: bold;
 	margin: auto;
-	margin-top: 7px;
+	margin-top: 17px;
 	margin-bottom: 8px;
 	font-size: 23px;
 	height: 75px;
@@ -69,10 +60,7 @@ li {
 }
 
 #choices_display {
-	text-align: left;
-	font-style: bold;
-	margin: auto;
-	margin-top: 2px;
+	margin-top: -12px;
 	font-size: 23px;
 	height: 86px;
 	width: 395;
@@ -81,16 +69,20 @@ li {
 
 
 #questionBtn {
-	background-color: green;
-	width: 111px;
-	height: 55px;
-	border-radius: 50px;
+	background-color: grey;
+	opacity: 0.7;
+	width: 145px;
+	height: 116px;
+	border-radius: 73px;
 	color: white;
 	font-size: 15px;
-	float: left;
-	margin: 15px 0px 0px 45px;
+	margin: 150px 0px 0px 357px;
+}
 
-
+#questiondisplay {
+	color:Black;
+	font-size: 56px;
+	margin: 58 0 0 346;
 }
 
 #resetBtn {
@@ -103,12 +95,6 @@ li {
 	margin: 15px 45px 0px 97px;
 	
 }
-
-#scoreboxes {
-	float: right;
-	margin-top: 50px;
-}
-
 
 #player1Score {
 	width:111px;
@@ -131,12 +117,14 @@ li {
 }
 
 #scoreboxes {
-	background-color: ;
-	width: 419px;
+	width: 409px;
 	height: 290px;
-	margin-top: 0px;
 	border-bottom: 10px solid white;
-
+	border-right: 10px solid white;
+	float: right;
+	background-color: black;
+	opacity: 0.7;
+	border-radius: 0 0 23px 23px;
 }
 
 input {

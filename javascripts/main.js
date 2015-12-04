@@ -1,6 +1,5 @@
 console.log("main js loaded.");
 $(document).ready(function(){ 
-
 // this playerCounter is used to switch between player turns after each draw & then chosen answer.
 var playerCounter = 0;
 
@@ -24,11 +23,11 @@ function playerTurn(){
 }
 
 function winner() {
-	if (p1Score === "29029") {
+	if (player1Score === 29029) {
 		alert ("Player 1 Wins!");
 		game = new Game();
 	} 
-	else if (p2Score === "29029") {
+	else if (player2Score === 29029) {
 		alert ("Player 2 Wins");
 		game = new Game();
 	}
@@ -69,17 +68,29 @@ var Card = function Card(question, correct, wrong1, wrong2){
 			if (self.correctAnswer === chosenAnswer) {
 				player1Score += 4147;
 				p1Score.value = player1Score;
-			} else alert ("wrong");
+				$('#questiondisplay').html('Correct');
+			} else {
+				$('#questiondisplay').html('Incorrect');
+			}
+			
+			if (player1Score == 29029){
+			winner();
+		}
 			playerCounter++;
-			game.draw();
+			$('#questionBtn').toggle();
+			$('#questiondisplay').toggle();
 		}
 			else { if (self.correctAnswer === chosenAnswer) {
 				player2Score += 4147;
 				p2Score.value = player2Score;
-			} else alert ("wrong");
+				$('#questiondisplay').html("Correct");
+			} else {
+				$('#questiondisplay').html('Incorrect');
+			}
+
 			playerCounter++;
-			game.draw();
-		
+			$('#questionBtn').toggle();
+			$('#questiondisplay').toggle();
 		}
 		
 		
@@ -98,7 +109,7 @@ var Player = function Player(){
 }
 
 var Game = function Game(){
-	$('#display_box').html('<div id="text_display1">Are you Ready?</div>');
+	$('#display_box').html('<div id="text_display1">Do you have what it takes to get to the top?</div>');
 
 	this.player1 = new Player();
 	this.player2 = new Player();
@@ -157,10 +168,17 @@ game = new Game();
 
 $('#questionBtn').click(function(){
 	game.draw();
+	$('#questionBtn').toggle();
+	$('#questiondisplay').toggle();
 })
 
 $('#resetBtn').click(function(){
 	game = new Game();
+	playerCounter = 0;
+	player1Score = 0;
+	player2Score = 0;
+	score1.value = player1Score;
+	score2.value = player2Score;
 })
 
 

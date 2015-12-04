@@ -6,30 +6,40 @@
   <title>Everest</title>
   <link rel="stylesheet" href="stylesheets/main.css">
 </head>
-<body>
+<body> 
+
   <div id="header">Everest</div>
 
   <!--main_container sits center-left and will house the mountain picture and display the player's icons moving toward summit-->
-  <div id="main_container"></div>
+  <div id="main_container">
+
+    <div>
+      <p id="questiondisplay"></p>
+    </div>
+    <div>
+     <button id="questionBtn">Next Question</button>
+    </div>
+
+  </div>
 
   <div id="display_box"></div>
 
   
   <!--the control_box will house the 'next card', 'reset' and 'start' buttons. In addition, it will display each players current elevation on the mountain -->
   <div id="button_box">
-    <div>
-     <button id="questionBtn">Next Question</button>
-    </div>
+    
     <div>
      <button id="resetBtn">Reset</button>
     </div>
   </div>
 
   <div id="scoreboxes">
-
-    Player 1: <input class="sb" id="p1Score" disabled = "disabled" value ="test1">
-
-    Player 2: <input class="sb" id="p2Score" disabled = "disabled" value ="test2">
+    <div id="Player1Input">
+      Player 1: <input class="sb" id="p1Score" disabled = "disabled" value ="test1"><br>
+    </div>
+    <div id="Player2Input">
+    Player 2: <input class="sb" id="p2Score" disabled = "disabled" value ="test2"><br>
+    </div>
   </div>
 
 
