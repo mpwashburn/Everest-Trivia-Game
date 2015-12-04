@@ -13,19 +13,20 @@
   <!--main_container sits center-left and will house the mountain picture and display the player's icons moving toward summit-->
   <div id="main_container">
 
+    <!-- The question display is inappropriately named. This display shows whether the player has answered correct or incorrect -->
     <div>
       <p id="questiondisplay"></p>
     </div>
     <div>
      <button id="questionBtn">Next Question</button>
     </div>
-
   </div>
 
+  <!-- The display box acts as a container for both 'display_text1' & 'choices_display' that were inserted in JS code, and can be seen in the stylesheet. -->
   <div id="display_box"></div>
 
   
-  <!--the control_box will house the 'next card', 'reset' and 'start' buttons. In addition, it will display each players current elevation on the mountain -->
+  <!-- Holds the players score display. I have not liked using the input tags as I have found it hard to style with them -->
   <div id="scoreboxes">
     Player 1: <input class="sb" id="p1Score" disabled = "disabled" value ="test1">
     
