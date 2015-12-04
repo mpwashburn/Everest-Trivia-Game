@@ -24,12 +24,14 @@ function playerTurn(){
 }
 
 function winner() {
-	if (p1Score === "29029");
-	alert ("Player 1 Wins!");
-	this.game;
-}	else {(if p2Score === "29029");
-	alert ("Player 2 Wins");
-	this.game;
+	if (p1Score === "29029") {
+		alert ("Player 1 Wins!");
+		game = new Game();
+	} 
+	else if (p2Score === "29029") {
+		alert ("Player 2 Wins");
+		game = new Game();
+	}
 }
 
 function shuffle (array) {
@@ -69,12 +71,14 @@ var Card = function Card(question, correct, wrong1, wrong2){
 				p1Score.value = player1Score;
 			} else alert ("wrong");
 			playerCounter++;
+			game.draw();
 		}
 			else { if (self.correctAnswer === chosenAnswer) {
 				player2Score += 4147;
 				p2Score.value = player2Score;
 			} else alert ("wrong");
 			playerCounter++;
+			game.draw();
 		
 		}
 		
@@ -104,7 +108,7 @@ var Game = function Game(){
     }
 
 	this.deck = [
-		new Card("What is the best season to climb Mt. Everest?", "Spring", "Summer", "Autumn"),
+		new Card("What is the ideal time to climb Mt. Everest?", "April - May", "June - September", "October - December"),
 		new Card("At least how many deaths to date has Everest claimed?", "250", "400", "323"),
 		new Card("In what year was Mt. Everest first summitted?", "1953", "1933", "1924"),
 		new Card("What man famously said he wanted to climb Everest 'because it's there'?", "George Mallory", "Andrew Irvine", "George Everest"),
@@ -120,6 +124,13 @@ var Game = function Game(){
 		new Card("Which amoung these is a form of altitude sickness?", "HACE", "HARE", "HIPA"),
 		new Card("In which year was the body of famous climber George Mallory, who died in 1924, found?", "1999", "1989", "2009"),
 		new Card("What type of mountains are the Himalayas?", "fold mountain", "table mountain", "snake mountain"),
+		new Card("Age-wise, what type of mountains are the Himalayas?", "young mountain chain", "old mountain chain", "ancient mountain chain"),
+		new Card("The Himalayas are still growing. How much are they growing each year", "8 - 12 centimeters", "2 - 6 centimeters", "15 - 18 centimeters"),
+		new Card("Who was the first American to reach the top of Mt. Everest", "James Whittaker", "Forest Whittaker", "Edwin Whittaker"),
+		new Card("Who was the first blind person to reach the top of Mt. Everest?", "Erik Weihenmayer", "James Thurber", "Jorge Luis Borges"),
+		new Card("What is teh average cost of a fully guided journey up Mt. Everest from the south face?", "$65,000", "85,000", "$105,000"),
+		new Card("What are teh Nepalese hired as guides and porters popularly known as?", "Sherpa", "Naga", "Mizo"),
+		new Card("How much time does an attempt to climb Mt. Everest usually take?", "2.5 months", "1.5 months", "0.5 month"),
 	]
 
 	this.draw = function(){
@@ -146,6 +157,10 @@ game = new Game();
 
 $('#questionBtn').click(function(){
 	game.draw();
+})
+
+$('#resetBtn').click(function(){
+	game = new Game();
 })
 
 
