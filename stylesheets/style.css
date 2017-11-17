@@ -1,0 +1,50 @@
+.nav {
+  width:100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+}
+.image{
+  background-image: url(../img/everest.jpg);
+  min-height: 285px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.display-box {
+  width: 75%;
+  height: 45%;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin:auto;
+  margin-top:7%;
+}
+#text_display1, #display_box{
+  text-align: center;
+  padding-top: 1%;
+  font-size: 20px;
+}
+
+li {
+  list-style-type: none;
+  text-align: left;
+}
+
+.button-box, .score-box {
+  border: .5px solid black;
+  padding:20px;
+  margin-top: 20px;
+  min-height: 140px;
+}
+.questionBtn {
+  padding: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+}

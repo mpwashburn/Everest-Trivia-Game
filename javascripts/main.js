@@ -1,5 +1,5 @@
 console.log("main js loaded.");
-$(document).ready(function(){ 
+$(document).ready(function(){
 // this playerCounter is used to switch between player turns after each draw & then chosen answer.
 var playerCounter = 0;
 
@@ -26,7 +26,7 @@ function winner() {
 	if (player1Score === 29029) {
 		alert ("Player 1 Wins!");
 		game = new Game();
-	} 
+	}
 	else if (player2Score === 29029) {
 		alert ("Player 2 Wins");
 		game = new Game();
@@ -72,7 +72,7 @@ var Card = function Card(question, correct, wrong1, wrong2){
 			} else {
 				$('#questiondisplay').html('Incorrect');
 			}
-			// we have the this check for 
+			// we have the this check for
 			if (player1Score == 29029){
 			winner();
 		}
@@ -92,8 +92,8 @@ var Card = function Card(question, correct, wrong1, wrong2){
 			$('#questionBtn').toggle();
 			$('#questiondisplay').toggle();
 		}
-		
-		
+
+
 	}
 
 	self.printOut = function(){
@@ -109,15 +109,15 @@ var Player = function Player(){
 }
 
 var Game = function Game(){
-	$('#display_box').html('<div id="text_display1">Do you have what it takes to get to the top?</div>');
+	$('#display_box').html('<div id="text_display1"><strong>Do you have what it takes to get to the top? <br/>The first player to reach a score of 29,029 feet wins!</strong></div>');
 
 	this.player1 = new Player();
 	this.player2 = new Player();
 
 	this.deck = [
-		new Card("What is the ideal time to climb Mt. Everest?", "April - May", "June - September", "October - December"),
+		new Card("When is the ideal time to climb Mt. Everest?", "April - May", "June - September", "October - December?"),
 		new Card("At least how many deaths to date has Everest claimed?", "250", "400", "323"),
-		new Card("In what year was Mt. Everest first summitted?", "1953", "1933", "1924"),
+		new Card("In what year was Mt. Everest first summited?", "1953", "1933", "1924"),
 		new Card("What man famously said he wanted to climb Everest 'because it's there'?", "George Mallory", "Andrew Irvine", "George Everest"),
 		new Card("At sea level, atmospheric pressure is 100 percent. What is it at the summit of Mt. Everest?", "30", "20", "5"),
 		new Card("The first woman to reach Everest's summit was?", "Japanese", "British", "Korean"),
@@ -127,16 +127,16 @@ var Game = function Game(){
 		new Card("How many people have succeeded in climbing Mt. Everest so far?", "More than 2000", "1,000 - 2000", "Fewer than 1000"),
 		new Card("What is the estimated number of dead bodies still on Everest?", "200", "100", "50"),
 		new Card("What do the people of Nepal call Mount Everest?", "Sagarmarth", "Hiawatha", "Zarathustra"),
-		new Card("What name did the British surveyors have for Mt. Everest in the mid-19th century", "Peak XV", "Peak X", "Peak V"),
+		new Card("What name did the British surveyors have for Mt. Everest in the mid-19th century?", "Peak XV", "Peak X", "Peak V"),
 		new Card("Which amoung these is a form of altitude sickness?", "HACE", "HARE", "HIPA"),
 		new Card("In which year was the body of famous climber George Mallory, who died in 1924, found?", "1999", "1989", "2009"),
 		new Card("What type of mountains are the Himalayas?", "fold mountain", "table mountain", "snake mountain"),
 		new Card("Age-wise, what type of mountains are the Himalayas?", "Young mountain chain", "Old mountain chain", "Ancient mountain chain"),
 		new Card("The Himalayas are still growing. How much are they growing each year", "2 - 6 centimeters", "8 - 12 centimeters", "15 - 18 centimeters"),
-		new Card("Who was the first American to reach the top of Mt. Everest", "James Whittaker", "Forest Whittaker", "Edwin Whittaker"),
+		new Card("Who was the first American to reach the top of Mt. Everest?", "James Whittaker", "Forest Whittaker", "Edwin Whittaker"),
 		new Card("Who was the first blind person to reach the top of Mt. Everest?", "Erik Weihenmayer", "James Thurber", "Jorge Luis Borges"),
-		new Card("What is teh average cost of a fully guided journey up Mt. Everest from the south face?", "$65,000", "85,000", "$105,000"),
-		new Card("What are teh Nepalese hired as guides and porters popularly known as?", "Sherpa", "Naga", "Mizo"),
+		new Card("What is the average cost of a fully guided journey up Mt. Everest from the south face?", "$65,000", "85,000", "$105,000"),
+		new Card("What are the Nepalese hired as guides and porters popularly known as?", "Sherpa", "Naga", "Mizo"),
 		new Card("How much time does an attempt to climb Mt. Everest usually take?", "2.5 months", "1.5 months", "0.5 month"),
 	]
 
@@ -146,7 +146,7 @@ var Game = function Game(){
 
 		$('.answer').click(function(){
 			(card.checkIfRight($(this)[0].innerHTML));
-		})		
+		})
 	}
 
 }
