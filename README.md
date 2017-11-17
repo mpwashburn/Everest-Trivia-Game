@@ -21,6 +21,8 @@ How to Play:
 Things to add/improve/change for better functionality:
 
 1. Shuffle the deck prior to the start of each game.
+2. Add player names.
+3. Make mobile friendly
 
 
 
